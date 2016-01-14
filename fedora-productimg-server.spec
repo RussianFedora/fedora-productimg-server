@@ -4,7 +4,7 @@
 
 Name:           fedora-productimg-server
 Version:        23
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Installer branding and configuration for Fedora Server
 
 # Copyright and related rights waived via CC0
@@ -77,6 +77,9 @@ popd
 %{_datadir}/fedora-productimg/product.img
 
 %changelog
+* Thu Jan 14 2016 Arkady L. Shane <ashejn@russianfedora.pro> 23-4.R
+- rebuilt
+
 * Sun Oct 25 2015 Arkady L. Shane <ashejn@russianfedora.pro> 23-3.R
 - set rfremix env by default
 
