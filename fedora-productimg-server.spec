@@ -4,7 +4,7 @@
 
 Name:           fedora-productimg-server
 Version:        24
-Release:        2%{?dist}.R
+Release:        2%{?dist}
 Summary:        Installer branding and configuration for Fedora Server
 
 # Copyright and related rights waived via CC0
