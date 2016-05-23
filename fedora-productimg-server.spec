@@ -66,6 +66,7 @@ popd
 %dir %{_datadir}/lorax/product/usr/share/anaconda
 %{_datadir}/lorax/product/usr/share/anaconda/fedora-server.css
 %{_datadir}/lorax/product/%{python3_sitearch}/pyanaconda/installclasses/fedora-server.py*
+%{_datadir}/lorax/product/%{python3_sitearch}/pyanaconda/installclasses/__pycache__/*
 %dir %{adverttarget}
 %{adverttarget}/Cockpit.svg
 %dir %{_datadir}/lorax/product/usr/share
