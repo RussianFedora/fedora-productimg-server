@@ -3,8 +3,8 @@
 %global adverttarget %{pixmaptarget}/rnotes/en
 
 Name:           fedora-productimg-server
-Version:        23
-Release:        5%{?dist}
+Version:        24
+Release:        2%{?dist}.R
 Summary:        Installer branding and configuration for Fedora Server
 
 # Copyright and related rights waived via CC0
@@ -66,7 +66,6 @@ popd
 %dir %{_datadir}/lorax/product/usr/share/anaconda
 %{_datadir}/lorax/product/usr/share/anaconda/fedora-server.css
 %{_datadir}/lorax/product/%{python3_sitearch}/pyanaconda/installclasses/fedora-server.py*
-%{_datadir}/lorax/product/%{python3_sitearch}/pyanaconda/installclasses/__pycache__/*
 %dir %{adverttarget}
 %{adverttarget}/Cockpit.svg
 %dir %{_datadir}/lorax/product/usr/share
@@ -77,14 +76,21 @@ popd
 %{_datadir}/fedora-productimg/product.img
 
 %changelog
-* Wed Mar 16 2016 Arkady L. Shane <ashejn@russianfedora.pro> 23-5.R
-- bump release to rebuild
-
-* Thu Jan 14 2016 Arkady L. Shane <ashejn@russianfedora.pro> 23-4.R
-- rebuilt
-
-* Sun Oct 25 2015 Arkady L. Shane <ashejn@russianfedora.pro> 23-3.R
+* Mon May 23 2016 Arkady L. Shane <ashejn@russianfedora.pro> - 24-2.R
 - set rfremix env by default
+
+* Tue Mar 22 2016 Stephen Gallagher <sgallagh@redhat.com> - 24-2
+- Remove references to byte-compiled python
+
+* Tue Mar 22 2016 Stephen Gallagher <sgallagh@redhat.com> - 24-1
+- Change default partitioning scheme for Fedora Server
+- https://lists.fedoraproject.org/archives/list/server@lists.fedoraproject.org/thread/D7ZK7SILYDYAATRFS6BFWZQWS6KSRGDG/
+
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 23-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 23-4
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
 
 * Fri Jul 10 2015 Stephen Gallagher <sgallagh@redhat.com> 23-2
 - Switch to Python 3
