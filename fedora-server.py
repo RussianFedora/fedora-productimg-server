@@ -7,7 +7,7 @@ from pyanaconda import iutil
 import types
 from pyanaconda.kickstart import getAvailableDiskSpace
 from blivet.partspec import PartSpec
-from blivet.autopart import swapSuggestion
+from blivet.autopart import swap_suggestion
 from blivet.platform import platform
 from blivet.size import Size
 
@@ -15,30 +15,31 @@ class FedoraServerInstallClass(FedoraBaseInstallClass):
     name = "Fedora Server"
     stylesheet = "/usr/share/anaconda/fedora-server.css"
     defaultFS = "xfs"
+    sortPriority = FedoraBaseInstallClass.sortPriority + 1
     defaultPackageEnvironment = "rfremix-server-product-environment"
 
     def setDefaultPartitioning(self, storage):
-        autorequests = [PartSpec(mountpoint="/", fstype=storage.defaultFSType,
+        autorequests = [PartSpec(mountpoint="/", fstype=storage.default_fstype,
                                  size=Size("2GiB"),
-                                 maxSize=Size("15GiB"),
+                                 max_size=Size("15GiB"),
                                  grow=True,
                                  btr=True, lv=True, thin=True, encrypted=True)]
 
-        bootreqs = platform.setDefaultPartitioning()
+        bootreqs = platform.set_default_partitioning()
         if bootreqs:
             autorequests.extend(bootreqs)
 
 
         disk_space = getAvailableDiskSpace(storage)
-        swp = swapSuggestion(disk_space=disk_space)
+        swp = swap_suggestion(disk_space=disk_space)
         autorequests.append(PartSpec(fstype="swap", size=swp, grow=False,
                                      lv=True, encrypted=True))
 
         for autoreq in autorequests:
             if autoreq.fstype is None:
                 if autoreq.mountpoint == "/boot":
-                    autoreq.fstype = storage.defaultBootFSType
+                    autoreq.fstype = storage.default_boot_fstype
                 else:
-                    autoreq.fstype = storage.defaultFSType
+                    autoreq.fstype = storage.default_fstype
 
-        storage.autoPartitionRequests = autorequests
+        storage.autopart_requests = autorequests

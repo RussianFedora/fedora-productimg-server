@@ -3,8 +3,8 @@
 %global adverttarget %{pixmaptarget}/rnotes/en
 
 Name:           fedora-productimg-server
-Version:        24
-Release:        2%{?dist}
+Version:        25
+Release:        3%{?dist}.R
 Summary:        Installer branding and configuration for Fedora Server
 
 # Copyright and related rights waived via CC0
@@ -77,6 +77,9 @@ popd
 %{_datadir}/fedora-productimg/product.img
 
 %changelog
+* Wed Sep 28 2016 Arkady L. Shane <ashejn@russianfedora.pro> - 25-3.R
+- sync with upstream
+
 * Mon May 23 2016 Arkady L. Shane <ashejn@russianfedora.pro> - 24-2.R
 - set rfremix env by default
 
