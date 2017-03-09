@@ -4,7 +4,7 @@
 
 Name:           fedora-productimg-server
 Version:        25
-Release:        3%{?dist}.R
+Release:        5%{?dist}.R
 Summary:        Installer branding and configuration for Fedora Server
 
 # Copyright and related rights waived via CC0
@@ -77,6 +77,9 @@ popd
 %{_datadir}/fedora-productimg/product.img
 
 %changelog
+* Thu Mar  9 2017 Arkady L. Shane <ashejn@russianfedora.pro> - 25-5.R
+- bump release to rebuild
+
 * Wed Sep 28 2016 Arkady L. Shane <ashejn@russianfedora.pro> - 25-3.R
 - sync with upstream
 
