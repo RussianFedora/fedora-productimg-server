@@ -3,8 +3,8 @@
 %global adverttarget %{pixmaptarget}/rnotes/en
 
 Name:           fedora-productimg-server
-Version:        25
-Release:        5%{?dist}.R
+Version:        27
+Release:        1%{?dist}.R
 Summary:        Installer branding and configuration for Fedora Server
 
 # Copyright and related rights waived via CC0
@@ -71,12 +71,17 @@ popd
 %{adverttarget}/Cockpit.svg
 %dir %{_datadir}/lorax/product/usr/share
 %dir %{_datadir}/lorax/product/usr
+%dir %{_datadir}/lorax/product
+%dir %{_datadir}/lorax
 %dir %{pixmaptarget}
 %{pixmaptarget}/*.png
 %dir %{_datadir}/fedora-productimg
 %{_datadir}/fedora-productimg/product.img
 
 %changelog
+* Mon Aug 14 2017 Stephen Gallagher <sgallagh@redhat.com> - 27-1.R
+- Own %%{_datadir}/lorax{,/product} dirs
+
 * Thu Mar  9 2017 Arkady L. Shane <ashejn@russianfedora.pro> - 25-5.R
 - bump release to rebuild
 
